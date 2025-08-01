@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grupo Grenpaz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 scroll-smooth">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-md fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#inicio" class="flex items-center space-x-2">
+        <img src="./logo_definitivo.png" alt="Logo Grupo Grenpaz" class="h-10 w-auto"/>
+        <img src="./img15.jpg" alt="Imagen adicional" class="h-10 w-auto hidden sm:inline" />
+      </a>
+      <nav class="hidden sm:flex flex-wrap gap-4 text-sm">
+        <a href="#inicio" class="hover:text-blue-700">Inicio</a>
+        <a href="#quienes" class="hover:text-blue-700">Quiénes somos</a>
+        <a href="#mision" class="hover:text-blue-700">Misión y Visión</a>
+        <a href="#servicios" class="hover:text-blue-700">Servicios</a>
+        <a href="#contacto" class="hover:text-blue-700">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-24">
+
+    <!-- PARALLAX CON OVERLAY -->
+    <section id="inicio" class="relative h-[90vh] flex flex-col items-center justify-center text-white text-center bg-cover bg-center bg-fixed" style="background-image: url('./refinery-4800320.jpg');">
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      <h1 class="relative z-10 text-4xl sm:text-6xl font-extrabold mb-6">GRUPO GP</h1>
+      <div class="relative z-10 px-4">
+        <h2 class="text-2xl sm:text-4xl font-bold mb-4 fade-in-section">Consulting and Service Group</h2>
+        <p class="text-lg sm:text-xl fade-in-section">Minería, Energía, Petróleo y Gas</p>
+      </div>
+    </section>
+
+    <!-- QUIÉNES SOMOS -->
+    <section id="quienes" class="py-16 px-4 sm:px-6 fade-in-section text-white" style="background-color: #f90101;">
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="text-left">
+          <h2 class="text-2xl font-bold mb-4">Quiénes somos</h2>
+          <p class="mb-4">El “Grupo GP” es una empresa joven argentina, dedicada a brindar soluciones integrales para la industria de la minería, energía, petróleo y gas. Fundada por un profesional con una experiencia y trayectoria promedio de más de 29 años de actividad, especializado en todas las disciplinas que se desarrollan durante las etapas de construcción, inspección y alistamiento de las instalaciones, con el objeto de lograr una puesta en servicio segura, planificada en el tiempo y alcanzando los estandares de calidad previstos, buscando siempre la excelencia.</p>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <img src="./img24.jpg" alt="Imagen Quiénes Somos" class="max-w-[350px] w-full h-auto rounded shadow-md" />
+        </div>
+      </div>
+    </section>
+
+    <!-- MISION Y VISION CON PARALLAX -->
+    <section id="mision" class="py-24 px-4 sm:px-6 fade-in-section relative text-white bg-fixed bg-center bg-cover" 
+      style="background-image: url('./refinery-4800320.jpg');">
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div class="relative max-w-4xl mx-auto text-center px-4">
+        <h2 class="text-2xl font-bold mb-4">Misión y Visión</h2>
+        <p class="mb-4">Misión: conocer y asistir a las necesidades de nuestros clientes, sus procesos y problemas; proporcionandoles servicios de calidad, de manera rápida y eficiente teniendo en cuenta la seguridad como premisa de todo. Garantizar la integridad operativa de cualquier tipo de instalaciones de superficies, plantas de procesos continuos, plantas solares y ductos (minería, energía, Oil & Gas).</p>
+        <p>Visión: consolidarnos y proyectarnos como uno de los líderes en el mercado nacional, expandiendo nuestros servicios en un futuro a nivel mundial, como una empresa valorada por nuestros clientes, proveedores y colaboradores; por nuestro profesionalismo, innovación y excelencia en soluciones confiables de procesos.</p>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-16 px-4 sm:px-6 fade-in-section text-white" style="background-color: #f90101;">
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="text-left">
+          <h2 class="text-2xl font-bold mb-4">Servicios que brindamos</h2>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Completamiento mecánico</li>
+            <li>Control y aseguramiento de la calidad</li>
+            <li>Precomisionado</li>
+            <li>Comisionado</li>
+            <li>Puesta en marcha</li>
+            <li>Test run, performance test & hand over</li>
+            <li>Supervisión de obras (asistencia a clientes)</li>
+            <li>Inspección FAT/SAT</li>
+            <li>Gestión de subcontratos</li>
+            <li>Capacitaciones</li>
+          </ul>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <img src="./oleoducto1.jpeg" alt="Imagen servicios" class="max-w-sm w-full h-auto rounded shadow-md" />
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIAS CON PARALLAX -->
+    <section id="industrias" class="py-24 px-4 sm:px-6 fade-in-section relative text-white bg-fixed bg-center bg-cover" 
+    style="background-image: url('./refinery-4800320.jpg');">
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div class="relative max-w-5xl mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-4 text-center">Industrias</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center max-w-4xl mx-auto">
+          <div class="bg-white bg-opacity-80 shadow p-6 rounded text-gray-900 min-w-[180px]">Energía</div>
+          <div class="bg-white bg-opacity-80 shadow p-6 rounded text-gray-900 min-w-[180px]">Petróleo y Gas</div>
+          <div class="bg-white bg-opacity-80 shadow p-6 rounded text-gray-900 min-w-[180px]">Minería</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SISTEMA -->
+    <section id="sistema" class="py-16 px-4 sm:px-6 fade-in-section text-white" style="background-color: #f90101;">
+      <div class="max-w-3xl mx-auto text-center px-4">
+        <h2 class="text-2xl font-bold mb-4">Sistema de gestión</h2>
+        <p>Contamos con un Sistema de Gestión Integrado propio (basado en los Sistemas Opercom ICAPS y GOC) para la aplicación del Precommissioning, Commissioning & Ready for Start Up, constituido por diversos procedimientos en todas las disciplinas o especialidades, ensayos y pruebas, protocolos o ITRs y actas de completamientos mecánico, Test Run, Hand Over y recepciones, incluido asistencia de conformes a obras.</p>
+      </div>
+    </section>  
+
+    <!-- DIRECTOR -->
+    <section id="director" class="py-16 px-4 sm:px-6 bg-gray-100 fade-in-section">
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4">
+        <div class="text-left">
+          <h2 class="text-2xl font-bold mb-4">Nuestro director</h2>
+          <p class="mb-2">Ing. Gregorio Marcial Paz</p>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Ingeniero Mecánico egresado de la Universidad de Buenos Aires</li>
+            <li>PMI en EPC realizado en la Universidad Austral</li>
+            <li>Master Degree Commissioning</li>
+            <li>PMP realizado en el Project Manager Institute</li>
+            <li>Administrador de los sistemas G.O.C / OPERCOM ICAPS</li>
+          </ul>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <img src="./img83.jpg" alt="Foto del Director" class="max-w-[250px] w-full h-auto rounded shadow-md" />
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section id="experiencia" class="py-16 px-4 sm:px-6 bg-gray-100 fade-in-section text-center">
+      <h2 class="text-2xl font-bold mb-20 text-black">Empresas donde adquirimos experiencia</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-center px-4">
+        <img src="./logo0.png" alt="Empresa 1" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo1.png" alt="Empresa 1" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo2.png" alt="Empresa 2" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo3.png" alt="Empresa 3" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo4.png" alt="Empresa 4" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo5.png" alt="Empresa 5" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo6.png" alt="Empresa 6" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo7.png" alt="Empresa 7" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo8.png" alt="Empresa 8" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo9.png" alt="Empresa 9" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo10.png" alt="Empresa 10" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo11.png" alt="Empresa 11" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo12.png" alt="Empresa 12" class="h-16 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo13.png" alt="Empresa 13" class="h-16 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo14.png" alt="Empresa 14" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo15.png" alt="Empresa 15" class="h-16 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo16.png" alt="Empresa 16" class="h-16 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo17.png" alt="Empresa 17" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+        <img src="./logo18.png" alt="Empresa 18" class="h-12 mx-auto hover:scale-110 transition-transform duration-300" />
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-16 px-4 sm:px-6 fade-in-section relative text-white overflow-hidden">
+      <div class="max-w-md ml-auto relative z-20 bg-black bg-opacity-85 p-4 rounded-md shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Contacto</h2>
+        <p class="mb-2">Dirección: Av. Godoy Cruz 489 – Ciudad de Mendoza – Argentina</p>
+        <p class="mb-2">Teléfonos: +54 11 5341 2327 / +54 11 6151 7106</p>
+        <p class="mb-2">Emails: gpaz@grupogrenpaz.com / contrataciones@grupogrenpaz.com</p>
+      </div>
+      <iframe
+        class="absolute inset-0 w-full h-full -z-10"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.316230492941!2d-68.83190888492966!3d-32.89026968093013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e062df2209eeb%3A0xf2f9ed82e3e73482!2sAv.%20Godoy%20Cruz%20489%2C%20M5500%20Mendoza!5e0!3m2!1ses!2sar!4v1690749237151!5m2!1ses!2sar"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        aria-hidden="false"
+        tabindex="0"
+      ></iframe>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-200 py-6 text-center">
+    <p class="text-sm text-gray-600">© Grupo Grenpaz - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in-section');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+
+</body>
+</html>
+
