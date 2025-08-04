@@ -24,41 +24,84 @@
       height: 100%;
       overflow-x: hidden;
     }
+    #mobile-menu {
+  display: flex;         /* está bien */
+  flex-direction: column;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  pointer-events: none;  /* para que no se pueda clickear cuando está oculto */
+}
+
+#mobile-menu.show {
+  max-height: 500px;     /* o el alto que necesites */
+  opacity: 1;
+  pointer-events: auto;
+}
   </style>
 </head>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('show');
+    menuIcon.textContent = mobileMenu.classList.contains('show') ? '✕' : '☰';
+  });
+
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('show');
+      menuIcon.textContent = '☰';
+    });
+  });
+});
+</script>
 <body class="relative bg-gray-900 text-gray-800 scroll-smooth">
 
   <!-- Fondo fijo full pantalla con overlay -->
   <div class="fixed inset-0 -z-20 bg-cover bg-center" style="background-image: url('./refinery-4800320.jpg'); background-attachment: fixed;"></div>
   <div class="fixed inset-0 -z-10 bg-black bg-opacity-60"></div>
 
-  <header class="bg-white shadow-md sticky top-0 w-full z-50 border-b border-gray-300" style="height: 64px;">
-    <div class="max-w-7xl mx-auto px-4 h-full flex justify-between items-center">
-      <a href="#inicio" class="flex items-center space-x-2">
-        <img src="./logo_definitivo.png" alt="Logo Grupo Grenpaz" class="h-10 w-auto"/>
-        <img src="./img15.jpg" alt="Imagen adicional" class="h-10 w-auto hidden sm:inline" />
-      </a>
-      <nav class="hidden sm:flex flex-row gap-6 text-sm">
-        <a href="#inicio" class="hover:text-blue-700">Inicio</a>
-        <a href="#quienes" class="hover:text-blue-700">Quiénes somos</a>
-        <a href="#mision" class="hover:text-blue-700">Misión y Visión</a>
-        <a href="#servicios" class="hover:text-blue-700">Servicios</a>
-        <a href="#contacto" class="hover:text-blue-700">Contacto</a>
-      </nav>
-    </div>
-  </header>
-  
-  <nav class="sm:hidden fixed bottom-0 left-0 right-0 bg-white shadow-inner text-sm flex justify-around py-2 z-50 border-t border-gray-300">
-    <a href="#inicio" class="hover:text-blue-700">Inicio</a>
-    <a href="#quienes" class="hover:text-blue-700">Quiénes somos</a>
-    <a href="#mision" class="hover:text-blue-700">Misión y Visión</a>
-    <a href="#servicios" class="hover:text-blue-700">Servicios</a>
-    <a href="#contacto" class="hover:text-blue-700">Contacto</a>
-  </nav>
-  
+<!-- HEADER -->
+<header class="bg-white shadow-md sticky top-0 w-full z-50 border-b border-gray-300" style="height: 64px;">
+  <div class="max-w-7xl mx-auto px-4 h-full flex justify-between items-center">
+    <!-- Logo -->
+    <a href="#inicio" class="flex items-center space-x-2">
+      <img src="./logo_definitivo.png" alt="Logo Grupo Grenpaz" class="h-10 w-auto"/>
+      <img src="./img15.jpg" alt="Imagen adicional" class="h-10 w-auto hidden sm:inline" />
+    </a>
+
+    <button id="menu-btn" class="sm:hidden text-gray-800 focus:outline-none">
+      <span id="menu-icon" class="text-2xl font-bold">☰</span>
+    </button>
+
+    <!-- Menú Desktop -->
+    <nav class="hidden sm:flex space-x-6 text-sm font-medium text-gray-800">
+      <a href="#inicio" class="hover:text-blue-700">Inicio</a>
+      <a href="#quienes" class="hover:text-blue-700">Quiénes somos</a>
+      <a href="#mision" class="hover:text-blue-700">Misión y Visión</a>
+      <a href="#servicios" class="hover:text-blue-700">Servicios</a>
+      <a href="#contacto" class="hover:text-blue-700">Contacto</a>
+    </nav>
+  </div>
+
+  <!-- Menú Mobile desplegable -->
+  <div id="mobile-menu" class="sm:hidden flex-col px-4 py-6 bg-white border-t border-gray-300 space-y-2">
+    <a href="#inicio" class="py-2 hover:text-blue-700">Inicio</a>
+    <a href="#quienes" class="py-2 hover:text-blue-700">Quiénes somos</a>
+    <a href="#mision" class="py-2 hover:text-blue-700">Misión y Visión</a>
+    <a href="#servicios" class="py-2 hover:text-blue-700">Servicios</a>
+    <a href="#contacto" class="py-2 hover:text-blue-700">Contacto</a>
+  </div>
+</header>
 
   <!-- MAIN -->
-  <main class="pt-16 pb-16">
+  <main class="pt-16">
 
     <!-- SECCIÓN INICIO sin fondo ni overlay porque están en fixed -->
     <section id="inicio" class="relative h-[90vh] flex flex-col items-center justify-center text-white text-center overflow-hidden">
