@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Grupo Grenpaz</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -18,18 +18,28 @@
     html {
       scroll-behavior: smooth;
     }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+    }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800 scroll-smooth">
+<body class="relative bg-gray-900 text-gray-800 scroll-smooth">
+
+  <!-- Fondo fijo full pantalla con overlay -->
+  <div class="fixed inset-0 -z-20 bg-cover bg-center" style="background-image: url('./refinery-4800320.jpg'); background-attachment: fixed;"></div>
+  <div class="fixed inset-0 -z-10 bg-black bg-opacity-60"></div>
 
   <!-- HEADER -->
-  <header class="bg-white shadow-md fixed w-full z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+  <header class="bg-white shadow-md sticky top-0 w-full z-50 border-b border-gray-300" style="height: 64px;">
+    <div class="max-w-7xl mx-auto px-4 h-full flex justify-between items-center">
       <a href="#inicio" class="flex items-center space-x-2">
         <img src="./logo_definitivo.png" alt="Logo Grupo Grenpaz" class="h-10 w-auto"/>
         <img src="./img15.jpg" alt="Imagen adicional" class="h-10 w-auto hidden sm:inline" />
       </a>
-      <nav class="hidden sm:flex flex-wrap gap-4 text-sm">
+      <nav class="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-4 text-sm">
         <a href="#inicio" class="hover:text-blue-700">Inicio</a>
         <a href="#quienes" class="hover:text-blue-700">Quiénes somos</a>
         <a href="#mision" class="hover:text-blue-700">Misión y Visión</a>
@@ -39,13 +49,13 @@
     </div>
   </header>
 
-  <main class="pt-24">
+  <!-- MAIN -->
+  <main class="pt-16">
 
-    <!-- PARALLAX CON OVERLAY -->
-    <section id="inicio" class="relative h-[90vh] flex flex-col items-center justify-center text-white text-center bg-cover bg-center bg-fixed" style="background-image: url('./refinery-4800320.jpg');">
-      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-      <h1 class="relative z-10 text-4xl sm:text-6xl font-extrabold mb-6">GRUPO GP</h1>
-      <div class="relative z-10 px-4">
+    <!-- SECCIÓN INICIO sin fondo ni overlay porque están en fixed -->
+    <section id="inicio" class="relative h-[90vh] flex flex-col items-center justify-center text-white text-center overflow-hidden">
+      <div class="relative z-10 px-4 flex flex-col items-center justify-center h-full">
+        <h1 class="text-4xl sm:text-6xl font-extrabold mb-6">GRUPO GP</h1>
         <h2 class="text-2xl sm:text-4xl font-bold mb-4 fade-in-section">Consulting and Service Group</h2>
         <p class="text-lg sm:text-xl fade-in-section">Minería, Energía, Petróleo y Gas</p>
       </div>
@@ -64,8 +74,8 @@
       </div>
     </section>
 
-    <!-- MISION Y VISION CON PARALLAX -->
-    <section id="mision" class="py-24 px-4 sm:px-6 fade-in-section relative text-white bg-fixed bg-center bg-cover" 
+    <!-- SECCIÓN MISION Y VISION SIN FADE-IN -->
+    <section id="mision" class="py-24 px-4 sm:px-6 relative text-white bg-fixed bg-center bg-cover" 
       style="background-image: url('./refinery-4800320.jpg');">
       <div class="absolute inset-0 bg-black bg-opacity-60"></div>
       <div class="relative max-w-4xl mx-auto text-center px-4">
@@ -99,9 +109,9 @@
       </div>
     </section>
 
-    <!-- INDUSTRIAS CON PARALLAX -->
-    <section id="industrias" class="py-24 px-4 sm:px-6 fade-in-section relative text-white bg-fixed bg-center bg-cover" 
-    style="background-image: url('./refinery-4800320.jpg');">
+    <!-- SECCIÓN INDUSTRIAS SIN FADE-IN -->
+    <section id="industrias" class="py-24 px-4 sm:px-6 relative text-white bg-fixed bg-center bg-cover" 
+      style="background-image: url('./refinery-4800320.jpg');">
       <div class="absolute inset-0 bg-black bg-opacity-60"></div>
       <div class="relative max-w-5xl mx-auto px-4">
         <h2 class="text-2xl font-bold mb-4 text-center">Industrias</h2>
